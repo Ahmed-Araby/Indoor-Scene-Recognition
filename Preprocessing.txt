@@ -1,9 +1,0 @@
-# preprocessing in imagenet paper:
-https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
-
-  1-down-sampled the images to a fixed resolution of 256 × 256.
-  2- Given a rectangular image, we first rescaled the image such that the shorter side was of length 256, and then
-     cropped out the central 256×256 patch from the resulting image.
-  3- subtracting the mean activity over the training set from each pixel. 
-     So we trained our network on the (centered) raw RGB values of the pixels
-     
