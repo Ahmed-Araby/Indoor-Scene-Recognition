@@ -1,0 +1,3 @@
+the image is BGR as opencv load it in this way 
+
+I convert the scaled image into uint8 which mean that I loos some floating point values

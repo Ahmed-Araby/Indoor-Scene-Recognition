@@ -1,0 +1,24 @@
+# images dimensions 
+min hight is  150
+min width is  174
+max height is  2607
+max width is  3460
+
+
+
+
+# we need to resize for 256*256   then 224 * 224 
+- number of images that will not be able to resize is  318
+- there is 6 gray scale image 
+- there is some data that have alpha channel (4 chnnels RGBA)
+- there is 2 images with alpha channel   ( this could be solved but they are dameged)
+- there is 1 damged image  
+
+# of potional data to be lost is 
+318 + 6 + 2 + 1= 407 out of 3137 
+
+
+total number of images = 3137
+
+
+ 
