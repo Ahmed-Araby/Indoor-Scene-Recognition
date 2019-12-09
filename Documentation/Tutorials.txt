@@ -1,0 +1,2 @@
+# alex net and some other architecture
+https://www.coursera.org/learn/convolutional-neural-networks/lecture/MmYe2/classic-networks
