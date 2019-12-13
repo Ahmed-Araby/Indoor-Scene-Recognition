@@ -1,0 +1,41 @@
+ global  minh , minw , maxh , maxw
+
+minh = 100000
+minw = 100000
+maxh = -1
+maxw = -1
+
+minh = min(minh , img.shape[0])
+minw = min(minw , img.shape[1])
+
+maxh = max(maxh , img.shape[0])
+maxw = max(maxw , img.shape[1])
+
+
+print("min hight is " , minh)
+print("min width is " , minw)
+
+print("max height is " , maxh)
+print("max width is " , maxw)
+
+
+cnt = 0
+global cnt
+if img.shape[0] < 256 or img.shape[1] < 256:
+    cnt += 1
+print("number of images that will not be able to resize is " , cnt)
+
+
+
+
+def rename():
+    l = os.listdir("train")
+    ll =os.listdir('train2')
+    assert (len(l) == len(ll))
+    for i in range( 0 , len(l)):
+        file_name1= l[i]
+        file_name2 = ll[i]
+        print(file_name1)
+        os.rename(os.path.join('train2' , file_name2) , os.path.join('train2' , file_name1))
+    pass
+

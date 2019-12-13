@@ -1,5 +1,8 @@
+"""
+it will generate CSV file for me from a file with data
+"""
 from os import listdir
-from Load_Data import get_path_list
+from generate_Data import get_path_list
 import pandas as pd
 import cv2
 
@@ -43,6 +46,7 @@ def generate_csv_train_file(path):
 
             img = cv2.imread(final_path , -1)
 
+            print("final_path : "  , final_path)
             # store id , final path to load the image , it's label
             ID.append(index)
             index+=1
@@ -60,5 +64,8 @@ def save_to_csv(ID , image_path , labelid , labelstr):
     Data.to_csv("train.csv")
     return Data
 
-
-generate_csv_train_file("/home/ahmedaraby/PycharmProjects/indoor-scene-recognition/train")
+"""
+print("start")
+generate_csv_train_file("/home/ahmedaraby/PycharmProjects/indoor-scene-recognition/train2")
+print("end")
+"""

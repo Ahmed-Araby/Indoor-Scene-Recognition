@@ -1,66 +1,62 @@
-from os import listdir
-import os
+"""
+    - load imgs from csv file
+    - put them into numpy array
+    - cast
+    - apply remaining preprocessing
+    - shuffle the numpy arrays that have the imgs
+
+    # final output
+    and deliver it to me to be passed into the tflearn model
+"""
+
+
+import pandas as pd
 import numpy as np
+from Preprocessing import dataset_preprocessing
 import cv2
-# opencv load images in BGR
-cnt1 = 0
-cnt2 = 0
-def get_path_list(path):
-    path_list = listdir(path)
-    return path_list
+from utils import shuffle
+
+H = 227
+W = 227
+C = 3
 
 def load_data(path):
 
-    corrupted = ['indooPool_Inside_gif.jpg']
+    # load from csv file
+    Data = pd.read_csv(path)
+    # split
+    img_paths = Data["image_path"]
     X = []
-    Y = []
-    global cnt1 , cnt2
-    # file with 10 folders
-    file_list =  get_path_list(path)
+    Y = Data["labelid"]
 
-    for i in range(0 , len(file_list) , 1):
-        # specific file of the 10
-        class_path = os.path.join(path , file_list[i])
+    # get images
+    for path in img_paths:
+        img =  cv2.imread(path , -1)  # BGR
+        X.append(img)
 
-        # images paths in 1 folder of the 10 folders
-        class_path_list = get_path_list(class_path)
+    # convert into numpy arrays
+    X = np.array(X).reshape(-1, H, W, C)
+    Y = np.array(Y).reshape(-1, 1)  # 0 - based labels (scaller)
 
-        # iterate throw the images of 1 class
-        for j in range(0 , len(class_path_list) , 1):
-            final_path = os.path.join(class_path , class_path_list[j])
+    # cast the data set to keep good precision
+    X = X.astype(np.float64)  # 64 give accurate prevision for mean calc and subtraction
 
-            # corrupted images
-            if class_path_list[j] in corrupted:
-                continue
-            img = cv2.imread(final_path, -1)
-            # image that we will ignore is
-            # too small or  gray scale , images with alpha channel
-            if len(img.shape) != 3 or img.shape[0] < 256 or img.shape[1] < 256 or img.shape[2] != 3:
-                continue
+    # apply preprocessing
+    X = dataset_preprocessing(X, 1)
 
-            X.append(img)
-            # i is out label
-            Y.append(i)
+    # shuffle
+    X , Y = shuffle(X , Y)
+
+    # demo
+    print(Y[:100])
+    print("\n\n")
+    print(Y[500:700])
 
     return X , Y
 
 
+X , Y = load_data('train.csv')
 
-def get_batch(image_list , path ,  index , batch_size):
-    images =[]
-    start = index*batch_size
-    end = start+batch_size
-    end = min(end , len(image_list))
-    for i in range(start , end , 1):
-        image_path = path + image_list[i]
-        tmp_img = cv2.imread(image_path , -1)
-        images.append(tmp_img)
-    return images
-
-
-def shuffle(images):
-    np.random.seed(1)  #  ***********
-    index = np.random.permutation(len(images))
-    images = images[index]
-    return images
-
+print(X)
+print("\n\n")
+print(Y)
