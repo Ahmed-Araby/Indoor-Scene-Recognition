@@ -1,0 +1,22 @@
+
+اول حاجه هتحتاج تبقي عندك اكونت ع Kaggle عشان تاخد منه API
+بعد ماتعمل اكونت خش علي my account وبعدين create a new API token 
+هينزل ع جهازك ملف JSON 
+ خش ع google colab واعمل new python3 notebook 
+run the commands below:
+!pip uninstall -y kaggle
+!pip install kaggle==1.5.6
+%env KAGGLE_USERNAME = user in json file
+%env KAGGLE_KEY = key in json file
+!kaggle competitions download -c fcis-sc-deeplearning-competition
+عشان تعمل UNRAR للداتا 
+!unrar x "file path+file name"
+وبكده تقدر تشتغل ع الداتا وانت ع  google بدل ماتحملها وتعملها upload وبدل ماتشتغل ع جهازك وتحمل tensorflow والليبريرز الباقيه 
+
+
+user in json file = اليوزر بتاعك اللي ف ملف الجيسون اللي نزلته 
+وال key نفس الكلام 
+
+
+# unzip the .zip data 
+!unzip "fcis-sc-deeplearning-competition.zip"
