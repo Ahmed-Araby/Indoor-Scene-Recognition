@@ -1,0 +1,4 @@
+At test time, the network makes a prediction by extracting
+five 224 × 224 patches (the four corner patches and the center patch) as well as their horizontal
+reflections (hence ten patches in all), and averaging the predictions made by the network’s softmax
+layer on the ten patches.

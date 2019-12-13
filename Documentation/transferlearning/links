@@ -1,0 +1,13 @@
+#implementation and weights for alexnet tf 
+https://www.cs.toronto.edu/~guerzhoy/tf_alexnet/
+
+#blog 
+https://towardsdatascience.com/transfer-learning-in-tensorflow-9e4f7eae3bb4
+
+
+
+
+https://github.com/huanzhang12/tensorflow-alexnet-model
+
+# alex net model with high accuracy 
+https://github.com/Ahmed-Araby/models/tree/master/vision/classification/alexnet

@@ -1,9 +1,28 @@
 # preprocessing in imagenet paper:
 https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
 
-  1-down-sampled the images to a fixed resolution of 256 × 256.
-  2- Given a rectangular image, we first rescaled the image such that the shorter side was of length 256, and then
-     cropped out the central 256×256 patch from the resulting image.
-  3- subtracting the mean activity over the training set from each pixel. 
+  1-down-sampled the images to a fixed resolution of 256 × 256.  
+  2- Given a rectangular image, we first rescaled the image such that the shorter side was 	of length 256, and then
+     cropped out the central 256×256 patch from the resulting image.  [Done]
+
+  3- subtracting the mean activity over the training set from each pixel. [Done]  (but theres is another approaches that we could try )
      So we trained our network on the (centered) raw RGB values of the pixels
      
+	it's a per channel mean (local) calculated across the whole data set 
+
+
+	then we could do normalization after it 
+	or do normalization them do pixel centering 
+
+ 
+keep the dtype to be float64 to keep hight precision for mean calculation  [done]
+
+	
+
+
+
+# resources 
+
+# mean cenntering and normalization 
+https://machinelearningmastery.com/how-to-manually-scale-image-pixel-data-for-deep-learning/
+

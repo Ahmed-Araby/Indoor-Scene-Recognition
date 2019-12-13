@@ -1,11 +1,11 @@
 # image net paper 
   https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
   
-  1 - generating image translations
-  2 - horizontal reflections
+  1 - generating image translations  
+  2 - horizontal reflections   [Done]
   [for 1 and 2]
-  they do this by extracting random 224 × 224 patches (and their horizontal reflections) from the
-  256×256 images and training our network on these extracted patche
+  they do this by extracting random 227 × 227 patches (and their horizontal reflections)     	from the 256×256 images and training our network on these extracted patche
+
   3 -  [this is hard one that include PCA so I need to learn it ---- leave it for now ]
   
   test time :

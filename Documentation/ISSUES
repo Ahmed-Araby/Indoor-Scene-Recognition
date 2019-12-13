@@ -1,3 +1,9 @@
 the image is BGR as opencv load it in this way 
 
 I convert the scaled image into uint8 which mean that I loos some floating point values
+
+
+casting the mean to be int in the subtraction operation 
+
+
+in resizing i didn't take care of the rectangle case
