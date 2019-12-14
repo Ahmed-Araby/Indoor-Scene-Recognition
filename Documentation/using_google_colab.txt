@@ -20,3 +20,15 @@ user in json file = اليوزر بتاعك اللي ف ملف الجيسون ا
 
 # unzip the .zip data 
 !unzip "fcis-sc-deeplearning-competition.zip"
+
+
+
+
+# just past this in code cell 
+
+!pip uninstall -y kaggle
+!pip install kaggle==1.5.6
+%env KAGGLE_USERNAME =ahmedaraby
+%env KAGGLE_KEY =af9b0168bb30bb0c4ec617dc6e25c015
+!kaggle competitions download -c fcis-sc-deeplearning-competition
+!unzip "fcis-sc-deeplearning-competition.zip"
