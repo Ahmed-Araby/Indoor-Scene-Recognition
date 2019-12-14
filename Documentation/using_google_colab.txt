@@ -34,12 +34,17 @@ user in json file = اليوزر بتاعك اللي ف ملف الجيسون ا
 !unzip "fcis-sc-deeplearning-competition.zip"
 
 
-
 # saving (download) the model from colab
 
 from google.colab import files
 files.download("checkpoint")
+files.download("model.tfl.meta")
+files.download("model.tfl.index")
+files.download("model.tfl.data-00000-of-00001 ")
 
 
 # delete file from colab 
-!rm filename
+!rm checkpoint
+!rm model.tfl.data-00000-of-00001
+!rm model.tfl.index
+!rm model.tfl.meta
