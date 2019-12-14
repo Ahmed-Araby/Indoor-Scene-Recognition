@@ -39,3 +39,7 @@ user in json file = اليوزر بتاعك اللي ف ملف الجيسون ا
 
 from google.colab import files
 files.download("checkpoint")
+
+
+# delete file from colab 
+!rm filename
