@@ -32,3 +32,10 @@ user in json file = اليوزر بتاعك اللي ف ملف الجيسون ا
 %env KAGGLE_KEY =af9b0168bb30bb0c4ec617dc6e25c015
 !kaggle competitions download -c fcis-sc-deeplearning-competition
 !unzip "fcis-sc-deeplearning-competition.zip"
+
+
+
+# saving (download) the model from colab
+
+from google.colab import files
+files.download("checkpoint")
