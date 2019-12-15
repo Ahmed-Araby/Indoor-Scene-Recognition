@@ -18,6 +18,9 @@ user in json file = اليوزر بتاعك اللي ف ملف الجيسون ا
 وال key نفس الكلام 
 
 
+# some helpful links 
+https://towardsdatascience.com/fast-ai-lesson-1-on-google-colab-free-gpu-d2af89f53604
+
 # unzip the .zip data 
 !unzip "fcis-sc-deeplearning-competition.zip"
 
