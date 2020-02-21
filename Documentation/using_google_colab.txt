@@ -53,8 +53,8 @@ files.download("model.tfl.data-00000-of-00001 ")
 !rm model.tfl.meta
 
 
-
-# download big files form colab 
+#########################################################################
+# download big files form colab to google drive 
 !pip install -U -q PyDrive
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
@@ -68,12 +68,11 @@ gauth.credentials = GoogleCredentials.get_application_default()
 drive = GoogleDrive(gauth)
 
 # 2. Save Keras Model or weights on google drive
-
 # create on Colab directory
-
 model_file = drive.CreateFile({'title' : 'weights.h5'})
 model_file.SetContentFile('weights.h5')
 model_file.Upload()
+############################################################################################
 
 # download to google drive
 drive.CreateFile({'id': model_file.get('id')})
