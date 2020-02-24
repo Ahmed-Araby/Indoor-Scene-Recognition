@@ -1,4 +1,4 @@
-
+# nice notbook with some guidness (https://colab.research.google.com/notebooks/io.ipynb#scrollTo=RWSJpsyKqHjH)
 اول حاجه هتحتاج تبقي عندك اكونت ع Kaggle عشان تاخد منه API
 بعد ماتعمل اكونت خش علي my account وبعدين create a new API token 
 هينزل ع جهازك ملف JSON 
@@ -25,7 +25,11 @@ https://towardsdatascience.com/fast-ai-lesson-1-on-google-colab-free-gpu-d2af89f
 !unzip "fcis-sc-deeplearning-competition.zip"
 
 
-
+# mount drive to colab 
+from google.colab import drive
+drive.mount('/content/drive', force_remount=True)
+# unmount drive from colab 
+drive.flush_and_unmount()
 
 # just past this in code cell 
 
