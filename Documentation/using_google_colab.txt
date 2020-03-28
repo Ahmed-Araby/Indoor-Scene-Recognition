@@ -90,3 +90,8 @@ drive.CreateFile({'id': model_file.get('id')})
 # mount google drive with colab
 from google.colab import drive
 drive.mount('/content/drive')
+
+
+# change the version of tensorflow in use 
+# U may need to restart the runtime , then execute this line at beginin before any imports 
+%tensorflow_version 1.x
